@@ -82,6 +82,7 @@ As you are now using regularization to guard against high variance, i.e. overfit
 
 ```python
 
+# It will help to define our model in terms of a pipeline
 def build_classifier(optimizer):
     classifier = Sequential()
     classifier.add(Dense(units=10,kernel_regularizer='l2',activation='relu',input_dim=14))
@@ -114,7 +115,7 @@ Calculate the predictions, save them as a csv, and print them.
 
 ```python
 
-# results
+# Results
 preds = classifier.predict(test)
 results = ids.assign(Survived=preds)
 results['Survived'] = results['Survived'].apply(lambda row: 1 if row > 0.5 else 0)
@@ -123,14 +124,14 @@ results.head(20)
 
 ```
 
-    14/14 [==============================] - 0s 2ms/step
+    14/14 [==============================] - 0s 1ms/step
 
 
 
 
 
 
-  <div id="df-6c5de56f-c087-4b54-ba33-cc646a4e6a21">
+  <div id="df-3feea7de-7960-4278-8911-aa9f0a552efc">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -258,7 +259,7 @@ results.head(20)
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-6c5de56f-c087-4b54-ba33-cc646a4e6a21')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-3feea7de-7960-4278-8911-aa9f0a552efc')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -309,12 +310,12 @@ results.head(20)
 
       <script>
         const buttonEl =
-          document.querySelector('#df-6c5de56f-c087-4b54-ba33-cc646a4e6a21 button.colab-df-convert');
+          document.querySelector('#df-3feea7de-7960-4278-8911-aa9f0a552efc button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-6c5de56f-c087-4b54-ba33-cc646a4e6a21');
+          const element = document.querySelector('#df-3feea7de-7960-4278-8911-aa9f0a552efc');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
