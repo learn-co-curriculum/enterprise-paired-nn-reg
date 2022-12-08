@@ -301,7 +301,7 @@ classifier.fit(X_train,
 # Call TensorBoard within SaturnCloud [Comment this out if you are not in SaturnCloud]
 import os
 print(f"https://{os.getenv('SATURN_JUPYTER_BASE_DOMAIN')}/proxy/8000/")
-%tensorboard --logdir logs/fit --port 8000 --blind_all
+%tensorboard --logdir logs/fit --port 8000 --bind_all
 
 # Call TensorBoard [Not in SaturnCloud]
 # Uncomment the next time if you are not in SC
