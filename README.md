@@ -280,7 +280,7 @@ classifier.fit(X_train,
 # Call TensorBoard
 import os
 print(f"https://{os.getenv('SATURN_JUPYTER_BASE_DOMAIN')}/proxy/8000/")
-%tensorboard --logdir logs/fit --port 8000 --blind_all
+%tensorboard --logdir logs/fit --port 8000 --bind_all
 ```
 
 #### Results and Predictions
